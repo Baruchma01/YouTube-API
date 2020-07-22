@@ -1,0 +1,24 @@
+.SearchInput {
+    display: flex;
+    justify-content: space-evenly;
+    flex-direction: row-reverse;
+}
+
+.Input {
+    margin-top: 0.50rem;
+    width: 575px;
+    height: 25px;
+    border: 1px solid lightgray;
+    direction: rtl
+}
+
+button {
+    border: none;
+    margin: 0;
+    background: none;
+    padding: 0.4rem 1.5rem;
+    /* border: 1px solid gray; */
+    background-color: #f8f8f8;
+    border: 1px solid #d3d3d3;
+    border-right: none;
+}

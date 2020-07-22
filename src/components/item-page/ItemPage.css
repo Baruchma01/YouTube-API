@@ -1,0 +1,13 @@
+.PlayerContainer {
+    display: flex;
+    justify-content: center;
+    margin-top: 5rem
+}
+
+.SongName {
+    text-align: center;
+}
+
+.divCol+.divCol {
+    margin-left: 5px;
+}
