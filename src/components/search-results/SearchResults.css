@@ -1,21 +1,27 @@
 .SearchResults {
-    width: 80%;
+    width: 85%;
     display: flex;
     flex-wrap: wrap;
     border: 1px solid #eee;
     box-shadow: 0 2px 3px #ccc;
-}
-
-.VideoItem:not(:last-child) {
-    margin-left: 10px;
+    background-color: #f1f1f1;
 }
 
 .Title {
-    width: 100%;
+    width: 93%;
     text-align: right;
     font-weight: 400;
-    font-size: 20px;
-    position: relative;
-    right: 1rem;
-    top: 1rem;
+    font-size: 18px;
+    font-weight: bold;
+    margin-bottom: 0;
+
+}
+
+.Container {
+    display: flex;
+    flex-wrap: wrap;
+    overflow: auto;
+    max-height: 1000px;
+    justify-content: center;
+    gap:20px;
 }
