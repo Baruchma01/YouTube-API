@@ -1,0 +1,57 @@
+.SearchInput {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 92%;
+    margin: 0 auto;
+    flex-wrap: wrap;
+}
+
+.Setting {
+    display: flex;
+    flex-wrap: wrap;
+    width: 20%;
+}
+
+.UserIcon {
+    background-color: #00887a;
+    border-radius: 50%;
+    width: 35px;
+    height: 35px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: #fff;
+}
+
+.InputContainer {
+    display: flex;
+    flex-wrap: wrap;
+    width: 60%;
+    justify-content: center;
+}
+
+.Input {
+    border: 1px solid lightgray;
+    direction: rtl;
+    width: 60%;
+}
+
+.Img {
+    width: 20%;
+    display: flex;
+    width: 20%;
+    flex-wrap: wrap;
+    justify-content: flex-end;
+}
+
+button {
+    border: none;
+    margin: 0;
+    background: none;
+    padding: 0.42rem 1.42rem;
+    /* border: 1px solid gray; */
+    background-color: #f8f8f8;
+    border: 1px solid #d3d3d3;
+    border-right: none;
+}

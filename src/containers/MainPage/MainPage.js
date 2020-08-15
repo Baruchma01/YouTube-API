@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from "react";
-import SearchInput from "../../components/search-input/SearchInput";
+import SearchHeader from "../../components/search-header/SearchHeader";
 import SearchResult from "../../components/search-results/SearchResults";
 import SideBar from '../../components/side-bar/SideBar';
 import classes from './MainPage.css';
@@ -46,7 +46,7 @@ function MainPage(props) {
   const page =
     props.location.pathname === "/" ? (
       <>
-        <SearchInput onChange={handleOnChange} onClick={handleOnClick} />
+        <SearchHeader onChange={handleOnChange} onClick={handleOnClick} />
         <div className={classes.ItemContainer}>
         <SearchResult videosList={searchVideosList} />
         <SideBar />
@@ -54,7 +54,7 @@ function MainPage(props) {
       </>
     ) : (
       <>
-        <SearchInput onChange={handleOnChange} onClick={handleOnClick} />{" "}
+        <SearchHeader onChange={handleOnChange} onClick={handleOnClick} />{" "}
       </>
     );
 
