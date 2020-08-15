@@ -1,5 +1,5 @@
 import React from "react";
-import SearchPage from "./components/search-page/SearchPage";
+import MainPage from "./containers/MainPage/MainPage";
 import ItemPage from "./components/item-page/ItemPage";
 import "./App.css";
 import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
@@ -9,7 +9,7 @@ function App() {
     <div className="container" style={{ minHeight: "1030px" }}>
       <Router>
         <div>
-          <SearchPage />
+          <MainPage />
           <Switch>
             {/* <Route exact path="/" component={SearchPage}/> */}
             <Route exact path="/item-page" component={ItemPage} />

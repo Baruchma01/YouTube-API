@@ -1,12 +1,11 @@
 import React, { useState, useEffect } from "react";
-import SearchInput from "../search-input/SearchInput";
-import SearchResult from "../search-results/SearchResults";
+import SearchInput from "../../components/search-input/SearchInput";
+import SearchResult from "../../components/search-results/SearchResults";
 import { search } from "../../api/apiActions";
 import { withRouter } from "react-router-dom";
-// import videosData from "../../api/data.json";
 import axios from "axios";
 
-function SearchPage(props) {
+function MainPage(props) {
   const baseUrl = "https://www.googleapis.com/youtube/v3/search";
   const params = {
     part: "snippet",
@@ -44,18 +43,19 @@ function SearchPage(props) {
 
   console.log(props.location.pathname);
 
-  const page = props.location.pathname === '/' ? <>
-    <SearchInput onChange={handleOnChange} onClick={handleOnClick} />
-      <SearchResult videosList={searchVideosList} />
- </> : <>
-  <SearchInput onChange={handleOnChange} onClick={handleOnClick} /> </>
-  
+  const page =
+    props.location.pathname === "/" ? (
+      <>
+        <SearchInput onChange={handleOnChange} onClick={handleOnClick} />
+        <SearchResult videosList={searchVideosList} />
+      </>
+    ) : (
+      <>
+        <SearchInput onChange={handleOnChange} onClick={handleOnClick} />{" "}
+      </>
+    );
 
-  return (
-    <div>
-      {page}
-    </div>
-  );
+  return <div>{page}</div>;
 }
 
-export default withRouter(SearchPage);
+export default withRouter(MainPage);
