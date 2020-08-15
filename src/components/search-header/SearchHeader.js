@@ -3,11 +3,22 @@ import classes from "./SearchHeader.css";
 
 export default function SearchHeader(props) {
   return (
-    <div className={classes.SearchInput}>
+    <div className={classes.Header}>
       <div className={classes.Setting}>
-        <i className={classes.UserIcon}>
-         <p>B</p>
-        </i>
+        <div>
+          <i className={classes.UserIcon}>
+            <p>B</p>
+          </i>
+        </div>
+        <div>
+          <i className="fas fa-bell fa-lg"></i>
+        </div>
+        <div>
+        <i className="fas fa-border-none fa-lg"></i>
+        </div>
+        <div>
+        <i className="fas fa-video"></i>
+        </div>
       </div>
       <div className={classes.InputContainer}>
         <button onClick={props.onClick}>

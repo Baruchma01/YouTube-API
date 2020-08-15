@@ -1,4 +1,4 @@
-.SearchInput {
+.Header {
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -11,13 +11,15 @@
     display: flex;
     flex-wrap: wrap;
     width: 20%;
+    align-items: center;
+    gap: 30px;
 }
 
 .UserIcon {
     background-color: #00887a;
     border-radius: 50%;
-    width: 35px;
-    height: 35px;
+    width: 30px;
+    height: 30px;
     display: flex;
     justify-content: center;
     align-items: center;
