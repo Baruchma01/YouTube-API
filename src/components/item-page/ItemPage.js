@@ -4,19 +4,26 @@ import VideoItem from "../video-item/VideoItem";
 import classes from "./ItemPage.css";
 import axios from "axios";
 
-export default function ItemPage(props) {
+const ItemPage = (props) => {
   const thumbnails = props.location.state.snippet.thumbnails.default.url;
-
+  const songName = props.location.state.snippet.title;
   useEffect(() => {
-    axios
-      .get(
-        `https://www.googleapis.com/youtube/v3/search?part=snippet&relatedToVideoId=${props.location.state.id.videoId}&type=video&key=AIzaSyDOP7dDemmDXkdQXVt0dfp4XUovd2wNGFY`
-      )
-      .then((video) => setRelatedPlaylist(video.data.items));
+    getRelatedPlayList();
   }, []);
 
-  const [relatedPlaylists, setRelatedPlaylist] = useState([]);
-  const songName = props.location.state.snippet.title;
+  const getRelatedPlayList = async () => {
+    setLoading(true);
+    const relatedPlayList = await axios.get(
+      `https://www.googleapis.com/youtube/v3/search?part=snippet&relatedToVideoId=${props.location.state.id.videoId}&type=video&key=AIzaSyDOP7dDemmDXkdQXVt0dfp4XUovd2wNGFY`
+    );
+    if (relatedPlayList) {
+      setLoading(false);
+      setRelatedPlayList(relatedPlayList.data.items);
+    }
+  };
+
+  const [relatedPlaylists, setRelatedPlayList] = useState([]);
+  const [loading, setLoading] = useState(true);
   const youtubeUrl = "https://www.youtube.com/embed/";
   const songUrl =
     typeof props.location.state.id === "string"
@@ -35,4 +42,6 @@ export default function ItemPage(props) {
       </div>
     </div>
   );
-}
+};
+
+export default ItemPage;
