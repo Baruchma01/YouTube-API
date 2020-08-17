@@ -3,6 +3,7 @@ import ReactPlayer from "react-player";
 import VideoItem from "../video-item/VideoItem";
 import classes from "./ItemPage.css";
 import axios from "axios";
+import Spinner from '../layout/Spinner/Spinner';
 
 const ItemPage = (props) => {
   const thumbnails = props.location.state.snippet.thumbnails.default.url;
@@ -25,12 +26,10 @@ const ItemPage = (props) => {
   const [relatedPlaylists, setRelatedPlayList] = useState([]);
   const [loading, setLoading] = useState(true);
   const youtubeUrl = "https://www.youtube.com/embed/";
-  const songUrl =
-    typeof props.location.state.id === "string"
-      ? youtubeUrl + props.location.state.id
-      : youtubeUrl + props.location.state.id.videoId;
+  const songUrl = typeof props.location.state.id === "string"? youtubeUrl + props.location.state.id : youtubeUrl + props.location.state.id.videoId;
   return (
-    <div className={classes.PlayerContainer}>
+    <div>
+      {loading? <Spinner /> : <div className={classes.PlayerContainer}>
       <div className={classes.divCol}>
         <ReactPlayer light={thumbnails} url={songUrl} />
         {<p className={classes.SongName}>{songName}</p>}
@@ -40,7 +39,9 @@ const ItemPage = (props) => {
           return <VideoItem key={item.id.videoId} item={item} />;
         })}
       </div>
+    </div>}
     </div>
+
   );
 };
 
