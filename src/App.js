@@ -1,6 +1,6 @@
 import React from "react";
 import MainPage from "./containers/MainPage/MainPage";
-import ItemPage from "./components/item-page/ItemPage";
+import ItemPage from "./containers/ItemPage/ItemPage";
 import "./App.css";
 import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
 

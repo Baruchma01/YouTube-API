@@ -1,9 +1,9 @@
 import React, { useEffect, useState } from "react";
 import ReactPlayer from "react-player";
-import VideoItem from "../video-item/VideoItem";
+import VideoItem from "../../components/video-item/VideoItem";
 import classes from "./ItemPage.css";
 import axios from "axios";
-import Spinner from '../layout/Spinner/Spinner';
+import Spinner from '../../components/layout/Spinner/Spinner';
 
 const ItemPage = (props) => {
   const thumbnails = props.location.state.snippet.thumbnails.default.url;
