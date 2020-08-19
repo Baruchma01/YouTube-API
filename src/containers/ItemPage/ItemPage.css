@@ -1,13 +1,13 @@
 .PlayerContainer {
     display: flex;
     justify-content: center;
-    margin-top: 5rem
+    margin-top: 4rem;
+    background-color: #f9f9f9;
+    padding-top: 1.5rem;
+    gap: 10px;
 }
 
 .SongName {
     text-align: center;
 }
 
-.divCol+.divCol {
-    margin-left: 5px;
-}

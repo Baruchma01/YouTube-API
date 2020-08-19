@@ -3,7 +3,7 @@ import ReactPlayer from "react-player";
 import VideoItem from "../../components/video-item/VideoItem";
 import classes from "./ItemPage.css";
 import axios from "axios";
-import Spinner from '../../components/layout/Spinner/Spinner';
+import Spinner from "../../components/layout/Spinner/Spinner";
 
 const ItemPage = (props) => {
   const thumbnails = props.location.state.snippet.thumbnails.default.url;
@@ -26,22 +26,29 @@ const ItemPage = (props) => {
   const [relatedPlaylists, setRelatedPlayList] = useState([]);
   const [loading, setLoading] = useState(true);
   const youtubeUrl = "https://www.youtube.com/embed/";
-  const songUrl = typeof props.location.state.id === "string"? youtubeUrl + props.location.state.id : youtubeUrl + props.location.state.id.videoId;
+  const songUrl =
+    typeof props.location.state.id === "string"
+      ? youtubeUrl + props.location.state.id
+      : youtubeUrl + props.location.state.id.videoId;
   return (
     <div>
-      {loading? <Spinner /> : <div className={classes.PlayerContainer}>
-      <div className={classes.divCol}>
-        <ReactPlayer light={thumbnails} url={songUrl} />
-        {<p className={classes.SongName}>{songName}</p>}
-      </div>
-      <div className={classes.divCol}>
-        {(relatedPlaylists || []).map((item) => {
-          return <VideoItem key={item.id.videoId} item={item} />;
-        })}
-      </div>
-    </div>}
-    </div>
+      {loading ? (
+        <Spinner />
+      ) : (
+        <div className={classes.PlayerContainer}>
+          <div className={classes.RelatedContainer}>
+            {(relatedPlaylists || []).map((item) => {
+              return <VideoItem key={item.id.videoId} item={item} />;
+            })}
+          </div>
 
+          <div>
+            <ReactPlayer light={thumbnails} url={songUrl} />
+            {<p className={classes.SongName}>{songName}</p>}
+          </div>
+        </div>
+      )}
+    </div>
   );
 };
 

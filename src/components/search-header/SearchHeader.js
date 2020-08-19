@@ -33,6 +33,7 @@ export default function SearchHeader(props) {
       </div>
       <div className={classes.Img}>
         <img alt="logo" src={require("./youtube-logo.jpg")} width="100px" />
+        <i class="fas fa-bars"></i>
       </div>
     </div>
   );
