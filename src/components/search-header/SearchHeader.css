@@ -5,6 +5,12 @@
     width: 92%;
     margin: 0 auto;
     flex-wrap: wrap;
+    position: fixed;
+    left: 0;
+    right: 0;
+    top:0;
+    width: 96%;
+    background: #fff;
 }
 
 .Setting {

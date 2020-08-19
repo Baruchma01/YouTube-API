@@ -6,18 +6,19 @@ export default function SearchHeader(props) {
     <div className={classes.Header}>
       <div className={classes.Setting}>
         <div>
-          <i className={classes.UserIcon}>
+          {/* <i className={classes.UserIcon}>
             <p>B</p>
-          </i>
+          </i> */}
+          <img alt="user" src={require('./user.png')} height="39" width="39"/>
         </div>
         <div>
           <i className="fas fa-bell fa-lg"></i>
         </div>
         <div>
-        <i className="fas fa-border-none fa-lg"></i>
+          <i className="fas fa-border-none fa-lg"></i>
         </div>
         <div>
-        <i className="fas fa-video"></i>
+          <i className="fas fa-video"></i>
         </div>
       </div>
       <div className={classes.InputContainer}>
