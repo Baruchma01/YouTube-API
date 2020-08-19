@@ -6,7 +6,6 @@ export default function SearchResults(props) {
   return (
     <div className={classes.SearchResults}>
       <div className={classes.Container}>
-      <h5 className={classes.Title}>מומלצים</h5>
       {(props.videosList || []).map((item) => {
         return (
           <div className={classes.VideoItem} key={item.snippet.title}>

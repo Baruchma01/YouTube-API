@@ -2,9 +2,8 @@
     width: 85%;
     display: flex;
     flex-wrap: wrap;
-    border: 1px solid #eee;
-    box-shadow: 0 2px 3px #ccc;
-    background-color: #f1f1f1;
+    background-color: #f9f9f9;
+    padding-top: 1.5rem;
 }
 
 .Title {
